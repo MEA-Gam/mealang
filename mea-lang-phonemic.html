@@ -1,11 +1,11 @@
-<!-- branding-applications.html -->
+<!-- mea-lang-phonemic.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Branding Applications: Applying phonosemantics and MEA principles to branding.">
-    <title>Branding Applications | MEA Insight Hub</title>
+    <meta name="description" content="MEA Lang Phonemic Chart: Interactive phonemic analysis.">
+    <title>MEA Lang Phonemic Chart | MEA Insight Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -213,28 +213,54 @@
             margin: 0 1rem;
             text-decoration: none;
         }
-        .tabs {
-            display: flex;
-            gap: 1rem;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+        th, td {
+            border: 1px solid var(--games-cyan);
+            padding: 0.5rem;
+            text-align: left;
+        }
+        th {
+            background: var(--academy-purple);
+        }
+        .filter-input {
             margin-bottom: 1rem;
         }
-        .tab-button {
-            background: var(--academy-purple);
-            border: none;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 12px;
+        .sound {
             cursor: pointer;
-            transition: background 0.3s;
+            color: var(--magma-orange);
         }
-        .tab-button.active {
-            background: var(--gradient);
+        .shape-container {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
         }
-        .tab-content {
-            display: none;
+        .shape {
+            width: 100px;
+            height: 100px;
         }
-        .tab-content.active {
-            display: block;
+        .bouba {
+            border-radius: 50%;
+            background: var(--alliance-green);
+        }
+        .kiki {
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background: var(--games-cyan);
+            transform: rotate(180deg);
+        }
+        .tooltip-text {
+            visibility: hidden;
+            background: var(--academy-purple);
+            padding: 0.5rem;
+            border-radius: 8px;
+            position: absolute;
+            z-index: 1;
+        }
+        td:hover .tooltip-text {
+            visibility: visible;
         }
         @media (max-width: 480px) {
             nav ul {
@@ -294,7 +320,7 @@
     </header>
     <main>
         <section class="hero">
-            <h1>Selling with Sound: Phonosemantics in Branding</h1>
+            <h1>Detailed MEA Lang Phonemic Chart</h1>
             <div class="logo" aria-label="MEA Logo" tabindex="0">
                 <svg viewBox="0 0 100 100" aria-hidden="true">
                     <path d="M10 90 L50 10 L90 90" fill="none" stroke="white" stroke-width="2"/>
@@ -303,83 +329,67 @@
                 </svg>
                 <div class="tooltip">MEA Negative-Space Logo: M as mountain of potential; hover reveals E (energy bridge) and A (alliance peak).</div>
             </div>
-            <p>Brand naming is rarely accidental. Marketers leverage sound symbolism to imbue brand names with immediate, subconscious meaning. By choosing specific phonemes, companies can prime consumers to perceive a product as fast, durable, elegant, or powerful—often before the consumer even sees the product itself.</p>
+            <p>Interactive table with MEA variations (/ɛm iː æ/, /miː.ə/, casing impacts), place/manner/voicing, psych associations, gaming examples. Click-to-play sounds, tooltips, filters, bouba-kiki shapes.</p>
+            <a href="https://mealang.meagames.org/" target="_blank">Visit MEA Lang</a>
         </section>
         <input type="text" class="search-bar" placeholder="Search sections..." oninput="searchContent(this.value)" aria-label="Search">
         <section>
-            <h2>Phoneme Priming Examples</h2>
-            <div class="card-container">
-                <div class="card" role="article">
-                    <h3>Plosives for Durability</h3>
-                    <p>Brands like Kodak or Rolex use hard stops to convey stability and recall.</p>
-                </div>
-                <div class="card" role="article">
-                    <h3>Fricatives for Elegance</h3>
-                    <p>Silk or Visa imply smoothness and effortlessness.</p>
-                </div>
-                <div class="card" role="article">
-                    <h3>Nasals for Friendliness</h3>
-                    <p>Maternal brands like Nestle or M&M's evoke comfort.</p>
-                </div>
-            </div>
-        </section>
-        <section>
-            <h2>Cognitive Profiles Tabs</h2>
-            <div class="tabs">
-                <button class="tab-button active" onclick="openTab(event, 'analytical')">Analytical Grapheme (MEA)</button>
-                <button class="tab-button" onclick="openTab(event, 'empathetic')">Empathic Monolith (MEA)</button>
-                <button class="tab-button" onclick="openTab(event, 'formal')">Formal Fragment (Mea)</button>
-                <button class="tab-button" onclick="openTab(event, 'lexical')">Lexical (Mea)</button>
-            </div>
-            <div id="analytical" class="tab-content active">
-                <p>This shape triggers 'letter-by-letter' reading, a high-effort cognitive state that bypasses the mental lexicon to focus on raw symbols.</p>
-                <p>Pronunciation: Spelled out /M-E-A/</p>
-                <p>Articulatory Stop: Closed-ended /A/ (Glottal)</p>
-                <p>Visual Impact: High salience, disjointed</p>
-                <p>Psychological State: Analytical, clinical, precise</p>
-            </div>
-            <div id="empathetic" class="tab-content">
-                <p>All-caps word recognition activates the logographic lens, where the word is seen as a singular, urgent symbol rather than a sequence.</p>
-                <p>Pronunciation: Single word /MEE-ah/</p>
-                <p>Casing Impact: Typographical 'shouting'</p>
-                <p>Visual Impact: Uniform height, high urgency</p>
-                <p>Psychological State: Assertive, authoritative, loud</p>
-            </div>
-            <div id="formal" class="tab-content">
-                <p>The Capital M signals the start of a sequence, but the spelling-out disrupts the 'Word Superiority Effect', creating a sense of formal distance.</p>
-                <p>Pronunciation: Spelled out /M-e-a/</p>
-                <p>Articulatory Stop: Closed-ended /A/ (Abrupt)</p>
-                <p>Visual Impact: Formal, hierarchical</p>
-                <p>Psychological State: Meticulous, distant, respectful</p>
-            </div>
-            <div id="lexical" class="tab-content">
-                <p>Standard title-case noun schema treats this as an identity, fostering familiarity.</p>
-                <p>Pronunciation: Single word /Mf/</p>
-                <p>Casing Impact: Title-cased, stand</p>
-                <p>Visual Impact: Balanced, ergonomic</p>
-                <p>Psychological State: Familiar, personal</p>
-            </div>
-        </section>
-        <section>
-            <h2>MEA Brand Integration</h2>
-            <p>"Lava to Light" messaging: From raw, energetic potential (Magma Orange) to warm, transitional accents (Ember).</p>
-            <div class="card-container">
-                <div class="card" role="article">
-                    <h3>Applications to Gaming</h3>
-                    <p>Use front vowels for fast-paced elements, plosives for impactful mechanics.</p>
-                </div>
-                <div class="card" role="article">
-                    <h3>Applications to Equity Pillars</h3>
-                    <p>Nasals for alliance-building, fostering comfort and inclusion.</p>
-                </div>
+            <h2>Phonemic Table</h2>
+            <input type="text" class="filter-input" placeholder="Filter table..." oninput="filterTable(this.value)" aria-label="Filter">
+            <table id="phonemic-table">
+                <thead>
+                    <tr>
+                        <th>Sound</th>
+                        <th>IPA</th>
+                        <th>Place</th>
+                        <th>Manner</th>
+                        <th>Voicing</th>
+                        <th>Psych Association</th>
+                        <th>Gaming Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="sound" onclick="playSound('m')">m</td>
+                        <td>/m/</td>
+                        <td>Bilabial</td>
+                        <td>Nasal</td>
+                        <td>Voiced</td>
+                        <td>Internal comfort, maternal</td>
+                        <td>Power-up sound in games</td>
+                    </tr>
+                    <tr>
+                        <td class="sound" onclick="playSound('e')">e</td>
+                        <td>/iː/</td>
+                        <td>Front</td>
+                        <td>Close</td>
+                        <td>Vowel</td>
+                        <td>Bright, fast</td>
+                        <td>High-energy alert</td>
+                    </tr>
+                    <tr>
+                        <td class="sound" onclick="playSound('a')">a</td>
+                        <td>/æ/</td>
+                        <td>Front</td>
+                        <td>Near-open</td>
+                        <td>Vowel</td>
+                        <td>Defined tension</td>
+                        <td>Tension build-up</td>
+                    </tr>
+                    <!-- Add more rows for variations -->
+                </tbody>
+            </table>
+            <div class="shape-container">
+                <div class="shape bouba" title="Bouba: Rounded, soft"></div>
+                <div class="shape kiki" title="Kiki: Sharp, tense"></div>
             </div>
         </section>
         <section class="quiz" aria-labelledby="quiz-title">
-            <h2 id="quiz-title">Quick Quiz: Branding Applications</h2>
-            <p>What do plosives imply in branding?</p>
-            <button onclick="checkAnswer(0, 'Durability')">Durability</button>
-            <button onclick="checkAnswer(0, 'Softness')">Softness</button>
-            <button onclick="checkAnswer(0, 'Friendliness')">Friendliness</button>
+            <h2 id="quiz-title">Quick Quiz: MEA Lang Phonemics</h2>
+            <p>What is the place of articulation for /m/?</p>
+            <button onclick="checkAnswer(0, 'Bilabial')">Bilabial</button>
+            <button onclick="checkAnswer(0, 'Front')">Front</button>
+            <button onclick="checkAnswer(0, 'Velar')">Velar</button>
             <p id="quiz-result"></p>
         </section>
     </main>
@@ -391,6 +401,31 @@
         <a href="https://mealang.meagames.org/">MEA Lang</a>
     </footer>
     <script>
+        let audioContext;
+        function playSound(sound) {
+            if (!audioContext) audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            oscillator.type = 'sine';
+            oscillator.frequency.value = sound === 'm' ? 100 : sound === 'e' ? 500 : 300; // Approximate
+            oscillator.connect(audioContext.destination);
+            oscillator.start();
+            setTimeout(() => oscillator.stop(), 500);
+        }
+        function filterTable(query) {
+            const table = document.getElementById('phonemic-table');
+            const rows = table.getElementsByTagName('tr');
+            for (let i = 1; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                let match = false;
+                for (let cell of cells) {
+                    if (cell.textContent.toLowerCase().includes(query.toLowerCase())) {
+                        match = true;
+                        break;
+                    }
+                }
+                rows[i].style.display = match ? '' : 'none';
+            }
+        }
         function toggleNav() {
             document.querySelector('.hamburger').classList.toggle('open');
             document.querySelector('.nav-links').classList.toggle('nav-open');
@@ -407,7 +442,7 @@
             });
         }
         function checkAnswer(question, answer) {
-            const correct = ['Durability']; 
+            const correct = ['Bilabial']; 
             const result = document.getElementById('quiz-result');
             result.textContent = answer === correct[question] ? 'Correct!' : 'Try again.';
         }
