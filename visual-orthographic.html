@@ -138,14 +138,15 @@
         }
         .tooltip {
             position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
+            top: 0;
+            left: 100%;
+            transform: none;
             background: var(--academy-purple);
             padding: 0.5rem;
             border-radius: 8px;
             display: none;
             font-size: 0.8rem;
+            white-space: nowrap;
         }
         .logo:hover .tooltip {
             display: block;
@@ -213,29 +214,6 @@
             margin: 0 1rem;
             text-decoration: none;
         }
-        .tabs {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-        .tab-button {
-            background: var(--academy-purple);
-            border: none;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .tab-button.active {
-            background: var(--gradient);
-        }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
         .diagram {
             display: flex;
             justify-content: space-around;
@@ -253,6 +231,16 @@
             nav ul {
                 flex-direction: column;
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--obsidian);
+                padding: 1rem;
+                box-shadow: var(--shadow);
+                align-items: center;
+                overflow: auto;
+                max-height: 80vh;
             }
             .hamburger {
                 display: block;
